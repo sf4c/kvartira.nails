@@ -1,0 +1,907 @@
+/* Google Fonts
+* Arsenal
+* Caveat
+* Lobster
+* Amatic
+* Montserrat Alternates
+* Montserrat
+* Oswald
+* PT Sans
+* Pacifico
+* Philosopher
+* Playfair Display
+* Press Start
+* Roboto Condensed
+* Roboto Mono
+* Roboto
+* Rubik Bubbles
+* Rubik Mono
+* Rubik
+* Shantell Sans
+* Tiny5
+* Ubuntu Condensed
+* Unbounded
+*/
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background-color: rgb(40, 40, 40);
+  user-select: none;
+  transition: 0.3s 0s;
+}
+button {
+  border: none;
+  border-radius: 6px;
+  outline: none;
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 0.3dvh;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(220, 220, 220);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(220, 220, 220);
+}
+
+@keyframes gradient-1 {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+@keyframes moveBottom {
+  0% {
+    transform: rotate(-180deg) translate(0, 0px);
+    filter: brightness(70%);
+  }
+  50% {
+    transform: rotate(-180deg) translate(0, 15px);
+    filter: brightness(100%);
+  }
+  75% {
+    transform: rotate(-180deg) translate(0, 15px);
+    filter: brightness(100%);
+  }
+  100% {
+    transform: rotate(-180deg) translate(0, 0px);
+    filter: brightness(70%);
+  }
+}
+
+.input {
+  display: table;
+  overflow: visible;
+  border-bottom: 3px solid rgba(200, 200, 200, 0.8);
+}
+.input-placeholder {
+  position: relative;
+  text-align: left;
+  top: -30px;
+  height: 30px;
+  width: calc(100% - 10px);
+  padding-left: 5px;
+  padding-right: 5px;
+  color: rgba(200, 200, 200, 0.8);
+  font-size: 18px;
+  font-family: 'Oswald';
+  font-weight: 400;
+  overflow: hidden;
+}
+.input-icon {
+  display: table-cell;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  left: calc(-100% + 50px);
+  width: 50px;
+  overflow: hidden;
+  padding-top: 5px;
+  color: rgba(100, 100, 100, 0.8);
+  font-size: 26px;
+}
+.input-field {
+  position: absolute;
+  top: 0px;
+  left: 50px;
+  height: calc(100% - 7.5px);
+  width: calc(100% - 55px);
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: rgba(250, 250, 250, 0.8);
+  font-size: 20px;
+  font-family: 'Oswald';
+  font-weight: 400;
+  padding-bottom: 5px;
+  overflow: hidden;
+  color: rgba(150, 150, 150, 0.8);
+  transition: 0.4s;
+}
+.input-field:focus {
+  color: rgba(220, 220, 220, 0.8);
+  transition: 0.2s;
+}
+.mainPanel {
+  position: sticky;
+  top: 0;
+  height: 80px;
+  width: 100%;
+  background-color: rgba(20, 20, 20, 0.6);
+  backdrop-filter: blur(2dvh);
+  z-index: 3;
+}
+.mainPanel-menu-button {
+  position: absolute;
+  text-align: center;
+  top: 5px;
+  left: 5%;
+  height: 60px;
+  width: 60px;
+  background-color: transparent;
+  border-bottom: 0.2dvh solid rgba(200, 200, 200, 0);
+  border-radius: 0;
+  color: rgb(150, 150, 150);
+  text-shadow: 0dvh 0dvh 1dvh rgba(200, 200, 200, 0);
+  font-size: 43px;
+  padding-top: 8px;
+  cursor: pointer;
+  transition:
+    border-bottom 0.3s 0s ease-in-out,
+    color 0.3s 0s ease-in-out,
+    text-shadow 0.3s 0s ease-in-out;
+}
+.mainPanel-menu-button:hover {
+  border-bottom: 0.2dvh solid rgba(200, 200, 200, 1);
+  color: rgb(200, 200, 200);
+  text-shadow: 0dvh 0dvh 1dvh rgba(200, 200, 200, 1);
+  transition: 0.15s 0s ease-in-out;
+}
+.mainPanel-authorization-button {
+  position: absolute;
+  text-align: center;
+  top: 5px;
+  left: calc(100% - 70px - 5%);
+  height: 60px;
+  width: 60px;
+  background-color: transparent;
+  border-bottom: 0.2dvh solid rgba(200, 200, 200, 0);
+  border-radius: 0;
+  color: rgb(150, 150, 150);
+  text-shadow: 0dvh 0dvh 1dvh rgba(200, 200, 200, 0);
+  font-size: 43px;
+  padding-top: 8px;
+  cursor: pointer;
+  transition:
+    border-bottom 0.3s 0s ease-in-out,
+    color 0.3s 0s ease-in-out,
+    text-shadow 0.3s 0s ease-in-out;
+}
+.mainPanel-authorization-button:hover {
+  border-bottom: 0.2dvh solid rgba(200, 200, 200, 1);
+  color: rgb(200,200, 200);
+  text-shadow: 0dvh 0dvh 1dvh rgba(200, 200, 200, 1);
+  transition: 0.15s 0s ease-in-out;
+}
+.mainMenu {
+  position: absolute;
+
+}
+.section {
+  position: relative;
+  width: 100%;
+  background-color: rgb(40, 40, 40);
+  box-shadow: 0dvh 1dvh 5dvh 1dvh rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  z-index: 1;
+}
+.section-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  z-index: 2;
+}
+.section-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(-45deg,
+  rgb(20, 20, 20), rgb(25, 25, 25), rgb(40, 40, 40));
+  background-size: 200%;
+  animation: gradient-1 20s ease infinite;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: transparent;
+  z-index: 1;
+}
+.section-1 {
+  height: 100dvh;
+}
+.section-1-brandLogo {
+  position: absolute;
+  top: calc(40dvh - 200px);
+  left: 50%;
+  height: 200px;
+  width: 200px;
+  margin-left: -100px;
+  background-image: url(../res/img/logo.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0.2em 0.2em 0.8em -0.15em rgba(0, 0, 0, 0.6);
+  border: none;
+  border-radius: 30px;
+  color: rgb(250, 250, 250);
+  font-size: 5.6dvh;
+  font-family: 'Unbounded';
+  font-weight: 900;
+  line-height: 60px;
+  z-index: 2;
+}
+.section-1-brandName {
+  position: absolute;
+  text-align: center;
+  top: calc(33dvh + 50px);
+  left: 0%;
+  height: 100dvh;
+  width: 100%;
+  text-shadow: 0em 0em 0.5em rgba(250, 250, 250, 0.8);
+  color: rgb(250, 250, 250);
+  font-size: 50px;
+  padding-top: 5dvh;
+  font-family: 'Unbounded';
+  font-weight: 900;
+  line-height: 6vh;
+  z-index: 1;
+}
+.section-1-decorationLine {
+  position: absolute;
+  top: calc(41dvh + 175px);
+  left: 50%;
+  height: 0;
+  width: 60px;
+  margin-left: -30px;
+  border: 3px solid rgba(250, 250, 250, 0.2);
+  border-radius: 10px;
+  z-index: 1;
+}
+.section-1-brandDescription {
+  position: absolute;
+  text-align: center;
+  top: calc(41dvh + 200px);
+  left: 50%;
+  height: 100dvh;
+  width: 400px;
+  margin-left: -200px;
+  text-shadow: 0em 0em 0.3em rgba(180, 180, 180, 0.8);
+  color: rgb(180, 180, 180);
+  font-size: 30px;
+  padding-top: 0dvh;
+  font-family: 'PT Sans';
+  font-weight: 100;
+  line-height: 34px;
+  z-index: 1;
+}
+.section-1-bottomArrow {
+  position: absolute;
+  text-align: center;
+  bottom: 2dvh;
+  left: 50%;
+  height: 100px;
+  width: 100px;
+  margin-left: -50px;
+  color: rgb(180, 180, 180);
+  font-size: 100px;
+  animation: moveBottom 2s ease infinite;
+  z-index: 1;
+}
+.section-2 {
+  height: calc(300px + (600px * 4) + 1200px);
+}
+.section-2-information {
+  position: relative;
+  height: 300px;
+  width: 100%;
+}
+.section-2-information-stars {
+  position: relative;
+  text-align: center;
+  top: 110px;
+  color: rgb(220, 70, 40);
+  transform: scale(200%);
+}
+.section-2-information-name {
+  position: relative;
+  text-align: center;
+  top: 130px;
+  color: rgb(220, 220, 220);
+  text-shadow: 0px 0px 10px rgb(220, 220, 220);
+  font-size: 40px;
+  font-weight: 900;
+  font-family: 'Montserrat Alternates';
+}
+.achievement {
+  position: relative;
+  height: 600px;
+  width: 100%;
+}
+.achievement-center {
+  position: relative;
+  height: 1200px;
+  width: 100%;
+}
+.achievement-image-center {
+  position: absolute;
+  text-align: center;
+  top: 350px;
+  left: 50%;
+  height: 400px;
+  width: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  background-image: url();
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.achievement-image-left {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: calc(50% - 500px);
+  height: 400px;
+  width: 400px;
+  margin-top: -200px;
+  background-image: url();
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.achievement-image-right {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: calc(50% + 100px);
+  height: 400px;
+  width: 400px;
+  margin-top: -200px;
+  background-image: url();
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.achievement-image-icon {
+  position: relative;
+  top: 44%;
+  color: rgb(220, 70, 40);
+  text-shadow: 1px 1px 0px rgba(220, 70, 40, 0.2);
+  transform: scale(1200%);
+}
+.achievement-name-center {
+  position: absolute;
+  text-align: center;
+  top: calc(400px + 400px);
+  left: 50%;
+  height: 100px;
+  width: 600px;
+  margin-top: -200px;
+  margin-left: -300px;
+  color: rgb(190, 190, 190);
+  text-shadow: 0px 0px 10px rgb(190, 190, 190);
+  font-size: 40px;
+  font-weight: 700;
+  font-family: 'Montserrat Alternates';
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.achievement-name-left {
+  position: absolute;
+  top: 50%;
+  left: calc(50% + 100px);
+  height: 100px;
+  width: 600px;
+  margin-top: -200px;
+  color: rgb(190, 190, 190);
+  text-shadow: 0px 0px 10px rgb(190, 190, 190);
+  font-size: 40px;
+  font-weight: 700;
+  font-family: 'Montserrat Alternates';
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.achievement-name-right {
+  position: absolute;
+  top: 50%;
+  left: calc(50% - 700px);
+  height: 100px;
+  width: 600px;
+  margin-top: -200px;
+  color: rgb(190, 190, 190);
+  text-shadow: 0px 0px 10px rgb(190, 190, 190);
+  font-size: 40px;
+  font-weight: 700;
+  font-family: 'Montserrat Alternates';
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.achievement-description-center {
+  position: absolute;
+  text-align: center;
+  top: calc(400px + 400px + 100px);
+  left: 50%;
+  height: 300px;
+  width: 600px;
+  margin-top: -200px;
+  margin-left: -300px;
+  color: rgb(100, 100, 100);
+  font-size: 20px;
+  font-weight: 500;
+  font-family: 'Montserrat Alternates';
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.achievement-description-left {
+  position: absolute;
+  top: calc(50% + 100px);
+  left: calc(50% + 100px);
+  height: 300px;
+  width: 600px;
+  margin-top: -200px;
+  color: rgb(100, 100, 100);
+  font-size: 20px;
+  font-weight: 500;
+  font-family: 'Montserrat Alternates';
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.achievement-description-right {
+  position: absolute;
+  top: calc(50% + 100px);
+  left: calc(50% - 700px);
+  height: 300px;
+  width: 600px;
+  margin-top: -200px;
+  color: rgb(100, 100, 100);
+  font-size: 20px;
+  font-weight: 500;
+  font-family: 'Montserrat Alternates';
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.section-3 {
+  height: 100dvh;
+}
+.section-3-information {
+  position: relative;
+  height: 300px;
+  width: 100%;
+}
+.section-3-information-stars {
+  position: relative;
+  text-align: center;
+  top: 110px;
+  color: rgb(220, 70, 40);
+  transform: scale(200%);
+}
+.section-3-information-name {
+  position: relative;
+  text-align: center;
+  top: 130px;
+  color: rgb(220, 220, 220);
+  text-shadow: 0px 0px 10px rgb(220, 220, 220);
+  font-size: 40px;
+  font-weight: 900;
+  font-family: 'Montserrat Alternates';
+}
+.section-3-worksList {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-content: flex-start;
+  position: relative;
+  left: calc(25% - 70px);
+  height: calc(95dvh - 300px);
+  width: calc(50% + 140px);
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.section-3-work {
+  margin: 15px 5px 5px 5px;
+  position: relative;
+  height: 170px;
+  width: 150px;
+  background-color: rgb(20, 20, 20);
+  border: 6px solid rgba(20, 20, 20, 1);
+  border-radius: 12px;
+  cursor: pointer;
+  overflow: hidden;
+  filter: brightness(60%);
+  transition: 0.2s ease-in-out;
+}
+.section-3-work:hover {
+  filter: brightness(100%);
+  transform: scale(110%);
+  transition: 0.1s ease;
+}
+.section-3-work-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: calc(100% - 20px);
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: transparent;
+  box-shadow: inset 0px -15px 10px -10px rgba(0, 0, 0, 1);
+  overflow: hidden;
+}
+.section-3-work-date {
+  position: absolute;
+  bottom: 0;
+  left: 5px;
+  height: 20px;
+  width: calc(100% - 30px);
+  color: rgb(180, 180, 180);
+  font-family: 'Caveat';
+  font-weight: 900;
+  background-color: transparent;
+  overflow: hidden;
+}
+.section-3-work-type {
+  position: absolute;
+  bottom: 0;
+  right: 5px;
+  height: 20px;
+  width: 20px;
+  color: rgb(180, 180, 180);
+  font-family: 'Caveat';
+  font-weight: 900;
+  background-color: transparent;
+  overflow: hidden;
+}
+.section-4 {
+  height: 100dvh;
+}
+.section-4-information {
+  position: relative;
+  height: 300px;
+  width: 100%;
+}
+.section-4-information-stars {
+  position: relative;
+  text-align: center;
+  top: 110px;
+  color: rgb(220, 70, 40);
+  transform: scale(200%);
+}
+.section-4-information-name {
+  position: relative;
+  text-align: center;
+  top: 130px;
+  color: rgb(220, 220, 220);
+  text-shadow: 0px 0px 10px rgb(220, 220, 220);
+  font-size: 40px;
+  font-weight: 900;
+  font-family: 'Montserrat Alternates';
+}
+.section-5 {
+  height: 100dvh;
+}
+.section-5-information {
+  position: relative;
+  height: 300px;
+  width: 100%;
+}
+.section-5-information-stars {
+  position: relative;
+  text-align: center;
+  top: 110px;
+  color: rgb(220, 70, 40);
+  transform: scale(200%);
+}
+.section-5-information-name {
+  position: relative;
+  text-align: center;
+  top: 130px;
+  color: rgb(220, 220, 220);
+  text-shadow: 0px 0px 10px rgb(220, 220, 220);
+  font-size: 40px;
+  font-weight: 900;
+  font-family: 'Montserrat Alternates';
+}
+.section-6 {
+  height: 100dvh;
+}
+.section-6-information {
+  position: relative;
+  height: 300px;
+  width: 100%;
+}
+.section-6-information-stars {
+  position: relative;
+  text-align: center;
+  top: 110px;
+  color: rgb(220, 70, 40);
+  transform: scale(200%);
+}
+.section-6-information-name {
+  position: relative;
+  text-align: center;
+  top: 130px;
+  color: rgb(220, 220, 220);
+  text-shadow: 0px 0px 10px rgb(220, 220, 220);
+  font-size: 40px;
+  font-weight: 900;
+  font-family: 'Montserrat Alternates';
+}
+.section-7 {
+  height: 100dvh;
+}
+.section-7-information {
+  position: relative;
+  height: 300px;
+  width: 100%;
+}
+.section-7-information-stars {
+  position: relative;
+  text-align: center;
+  top: 110px;
+  color: rgb(220, 70, 40);
+  transform: scale(200%);
+}
+.section-7-information-name {
+  position: relative;
+  text-align: center;
+  top: 130px;
+  color: rgb(220, 220, 220);
+  text-shadow: 0px 0px 10px rgb(220, 220, 220);
+  font-size: 40px;
+  font-weight: 900;
+  font-family: 'Montserrat Alternates';
+}
+.window {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  backdrop-filter: blur(0);
+  opacity: 0;
+  z-index: 4;
+  transition:
+    visibility 0s 1s,
+    backdrop-filter 0s 1s ease-in-out,
+    opacity 0.5s 0s ease-in-out;
+}
+.window.cl {
+  visibility: visible;
+  backdrop-filter: blur(8px);
+  opacity: 1;
+  transition:
+    visibility 0s 0s,
+    backdrop-filter 0s 0s ease-in-out,
+    opacity 0.5s 0s ease-in-out;
+}
+.window-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 0;
+  width: 360px;
+  margin-top: 0;
+  margin-left: -180px;
+  border-bottom: 1px solid white;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  z-index: 2;
+  transition:
+    height 0.5s 0s ease-in-out,
+    margin-top 0.5s 0s ease-in-out,
+    padding-top 0.5s 0s ease-in-out,
+    padding-bottom 0.5s 0s ease-in-out;
+}
+.window-content.cl {
+  height: 611px;
+  margin-top: -333px;
+  padding-top: 50px;
+  padding-bottom: 5px;
+  transition:
+    height 0.5s 0.5s ease-in-out,
+    margin-top 0.5s 0.5s ease-in-out,
+    padding-top 1s 0s ease-in-out,
+    padding-bottom 1s 0s ease-in-out;
+}
+.window-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.65);
+  z-index: 1;
+}
+.window-close-button {
+  position: absolute;
+  text-align: center;
+  top: 5px;
+  left: calc(100% - 45px);
+  height: 40px;
+  width: 40px;
+  background-color: transparent;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+  z-index: 1;
+}
+.window-name {
+  position: absolute;
+  text-align: left;
+  top: 5px;
+  left: 5px;
+  height: 40px;
+  width: 300px;
+  background-color: transparent;
+  color: white;
+  font-size: 30px;
+  font-family: 'Montserrat Alternates';
+  font-weight: 600;
+  overflow: hidden;
+  z-index: 1;
+}
+.seeImage-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 360px;
+  width: 360px;
+  margin-top: -180px;
+  margin-left: -180px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.seeImage-master {
+  position: absolute;
+  top: calc(50% + 180px + 30px);
+  left: 50%;
+  height: 40px;
+  width: 360px;
+  margin-top: -20px;
+  margin-left: -180px;
+  font-size: 32px;
+  color: rgb(180, 180, 180);
+}
+.input-authorization-number {
+  position: relative;
+  top: 50px;
+  height: 60px;
+  width: calc(100% - 5px);
+}
+.input-authorization-password {
+  position: relative;
+  top: 100px;
+  height: 60px;
+  width: calc(100% - 5px);
+}
+.authorization-registration-text {
+  position: relative;
+  top: calc(100% - 250px);
+  color: rgb(150, 150, 150);
+}
+.authorization-registration-link {
+  color: rgb(220, 220, 220);
+  transition: 0.1s;
+}
+.authorization-registration-link:hover {
+  color: rgb(250, 250, 250);
+  transition: 0.1s;
+}
+.submit-authorization {
+  position: relative;
+  text-align: center;
+  top: calc(100% - 230px);
+  height: calc(60px - 15px);
+  width: calc(100% - 5px);
+  background-color: transparent;
+  border: 3px solid rgb(200, 200, 200);
+  border-radius: 8px;
+  padding-top: 15px;
+  color: rgb(200, 200, 200);
+  font-size: 24px;
+  font-family: 'Rubik';
+  font-weight: 400;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.submit-authorization:hover {
+  background-color: rgb(200, 200, 200);
+  color: rgb(0, 0, 0);
+  filter: brightness(120%);
+  transition: 0.15s ease-in-out;
+}
+.input-registration-number {
+  position: relative;
+  top: 50px;
+  height: 60px;
+  width: calc(100% - 5px);
+}
+.input-registration-password {
+  position: relative;
+  top: 100px;
+  height: 60px;
+  width: calc(100% - 5px);
+}
+.input-registration-password-confirmation {
+  position: relative;
+  top: 150px;
+  height: 60px;
+  width: calc(100% - 5px);
+}
+.registration-authorization-text {
+  position: relative;
+  top: calc(100% - 295px);
+  color: rgb(150, 150, 150);
+}
+.registration-authorization-link {
+  color: rgb(220, 220, 220);
+  transition: 0.1s;
+}
+.registration-authorization-link:hover {
+  color: rgb(250, 250, 250);
+  transition: 0.1s;
+}
+.submit-registration {
+  position: relative;
+  text-align: center;
+  top: calc(100% - 274px);
+  height: calc(60px - 15px);
+  width: calc(100% - 5px);
+  background-color: transparent;
+  border: 3px solid rgb(200, 200, 200);
+  border-radius: 8px;
+  padding-top: 15px;
+  color: rgb(200, 200, 200);
+  font-size: 24px;
+  font-family: 'Rubik';
+  font-weight: 400;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.submit-registration:hover {
+  background-color: rgb(200, 200, 200);
+  color: rgb(0, 0, 0);
+  filter: brightness(120%);
+  transition: 0.15s ease-in-out;
+}
